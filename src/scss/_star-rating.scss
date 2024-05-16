@@ -1,0 +1,38 @@
+.star-rating {
+  display: flex;
+  align-items: center;
+  column-gap: 4px;
+  flex-direction: row-reverse;
+  font-size: 1.5em;
+  justify-content: space-around;
+  text-align: center;
+  width: fit-content;
+}
+
+.star-rating input {
+  position: absolute;
+  width: 0;
+  height: 0;
+  z-index: -100;
+  opacity: 0;
+}
+
+.star-rating label {
+  width: 25px;
+  height: 25px;
+  color: #ccc;
+  cursor: pointer;
+}
+
+.star-rating :checked~label {
+  svg {
+    fill: var(--orange-color);
+  }
+}
+
+.star-rating label:hover,
+.star-rating label:hover~label {
+  svg {
+    fill: var(--orange-color);
+  }
+}

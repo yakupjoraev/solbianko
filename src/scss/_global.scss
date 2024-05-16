@@ -22,8 +22,15 @@ html {
 
 // Body Locked
 body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
   font-family: var(--primary-font);
   line-height: 100%;
+
+  main {
+    flex-grow: 1;
+  }
 
   &.locked {
     overflow: hidden;
