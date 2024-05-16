@@ -99,10 +99,10 @@ function productSlider() {
     // centeredSlides: true,
     // loop: true,
     spaceBetween: 20,
-    pagination: {
-      el: ".products-slider__slider-pagination",
-      clickable: true,
-    },
+    // pagination: {
+    //   el: ".products-slider__slider-pagination",
+    //   clickable: true,
+    // },
 
 
     breakpoints: {
@@ -131,44 +131,132 @@ function productSlider() {
 
 productSlider();
 
+// function slider() {
+//   const container = document.querySelector('.slider__container');
+
+//   if (!container) {
+//     return null
+//   }
+
+//   var swiper = new Swiper(".slider", {
+//     slidesPerView: 1,
+//     centeredSlides: true,
+//     loop: true,
+//     // spaceBetween: 40,
+//     pagination: {
+//       el: ".slider__pagination",
+//       clickable: true,
+//     },
+
+//     breakpoints: {
+//       // when window width is >= 320px
+//       320: {
+//         slidesPerView: 1,
+//         // spaceBetween: 20
+//       },
+//       // when window width is >= 480px
+//       480: {
+//         // spaceBetween: 30
+//       },
+//       // when window width is >= 640px
+//       767: {
+//         slidesPerView: 3,
+//         // spaceBetween: 40
+//       },
+
+//       991: {
+//         slidesPerView: 4,
+//         // spaceBetween: 40
+//       },
+
+//       1200: {
+//         slidesPerView: 5,
+//         // spaceBetween: 40
+//       }
+//     }
+//   });
+// }
+
+// slider();
+
+// function sliderTwo() {
+//   const container = document.querySelector('.slider__container');
+
+//   if (!container) {
+//     return null
+//   }
+
+//   var swiper = new Swiper(".slider-2", {
+//     slidesPerView: 1,
+//     centeredSlides: true,
+//     loop: true,
+//     // spaceBetween: 40,
+//     pagination: {
+//       el: ".slider__pagination",
+//       clickable: true,
+//     },
+//   });
+// }
+
+// sliderTwo();
+
 function slider() {
   const container = document.querySelector('.slider__container');
 
   if (!container) {
-    return null
+    return null;
   }
 
-  var swiper = new Swiper(".slider", {
+  const swiper1 = new Swiper(".slider", {
     slidesPerView: 1,
     centeredSlides: true,
-    loop: true,
-    // spaceBetween: 40,
+    // loop: true,
     pagination: {
       el: ".slider__pagination",
       clickable: true,
     },
-
     breakpoints: {
-      // when window width is >= 320px
-      320: {
-        // spaceBetween: 20
-      },
-      // when window width is >= 480px
-      480: {
-        // spaceBetween: 30
-      },
-      // when window width is >= 640px
-      767: {
-        slidesPerView: 'auto',
-        // spaceBetween: 40
-      }
+      320: { slidesPerView: 1 },
+      767: { slidesPerView: 3 },
+      991: { slidesPerView: 4 },
+      1200: { slidesPerView: 5 },
+    }
+  });
+
+  const swiper2 = new Swiper(".slider-2", {
+    slidesPerView: 1,
+    centeredSlides: true,
+    // loop: true,
+    pagination: {
+      el: ".slider__pagination",
+      clickable: true,
+    },
+  });
+
+  swiper1.on('slideChange', function () {
+    if (swiper2) {
+      swiper2.slideTo(this.activeIndex);
+    }
+  });
+
+  swiper2.on('slideChange', function () {
+    if (swiper1) {
+      swiper1.slideTo(this.activeIndex);
     }
   });
 }
 
 slider();
 
-document.addEventListener("DOMContentLoaded", function () {
+
+
+function productTabs() {
+  const container = document.querySelector('.product');
+
+  if (!container) {
+    return null;
+  }
+
   const tabButtons = document.querySelectorAll('.product__btn');
   const tabContents = document.querySelectorAll('.product__content');
 
@@ -185,7 +273,10 @@ document.addEventListener("DOMContentLoaded", function () {
       activeTabContent.classList.add('active');
     });
   });
-});
+}
+
+productTabs();
+
 
 // if (window.matchMedia("(min-width: 768px)").matches) {
 //   slider();
