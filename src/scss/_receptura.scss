@@ -1,0 +1,80 @@
+.receptura {
+  padding: 90px 0;
+  background-color: var(--white-color);
+
+  @media (max-width: $breakpoint992) {
+    padding: 60px 0;
+  }
+
+  // .receptura__inner
+
+  &__inner {}
+
+  // .receptura__title
+
+  &__title {
+    margin-bottom: 94px;
+    text-align: center;
+    font-family: var(--secondary-font);
+    font-weight: 900;
+    font-size: 40px;
+    line-height: 120%;
+    text-transform: uppercase;
+    color: var(--text-color);
+
+    @media (max-width: $breakpoint992) {
+      margin-bottom: 60px;
+      font-size: 30px;
+    }
+
+    @media (max-width: $breakpoint768) {
+      margin-bottom: 40px;
+    }
+  }
+
+  // .receptura__content
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    row-gap: 80px;
+
+    @media (max-width: $breakpoint992) {
+      row-gap: 60px;
+    }
+
+    @media (max-width: $breakpoint768) {
+      row-gap: 32px;
+    }
+  }
+
+  // .receptura__texts
+
+  &__texts {
+    display: flex;
+    flex-direction: column;
+    row-gap: 20px;
+
+    @media (max-width: $breakpoint768) {
+      row-gap: 12px;
+    }
+  }
+
+  // .receptura__label
+
+  &__label {
+    font-family: var(--secondary-font);
+    font-weight: 900;
+    font-size: 16px;
+    color: var(--text-color);
+  }
+
+  // .receptura__text
+
+  &__text {
+    font-family: var(--secondary-font);
+    font-weight: 400;
+    font-size: 16px;
+    color: var(--text-color);
+  }
+}
