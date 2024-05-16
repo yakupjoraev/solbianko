@@ -26,13 +26,13 @@
 
 .star-rating :checked~label {
   svg {
-    fill: var(--orange-color);
+    fill: #fe674c;
   }
 }
 
 .star-rating label:hover,
 .star-rating label:hover~label {
   svg {
-    fill: var(--orange-color);
+    fill: #fe674c;
   }
 }
