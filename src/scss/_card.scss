@@ -1,4 +1,5 @@
 .card {
+  position: relative;
   display: flex;
   flex-direction: column;
 
@@ -149,6 +150,33 @@
   }
 }
 
-.star-rating {}
+.card__discont {
+  position: absolute;
+  z-index: 1;
+  top: 20px;
+  right: 0;
+  width: 80px;
+  height: 28px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 5px 0 0 5px;
 
-.star {}
+  font-weight: 700;
+  font-size: 20px;
+  color: var(--white-color);
+
+  &--red {
+    background: linear-gradient(131deg, #e55410 0%, #db1117 100%);
+
+  }
+
+  &--black {
+    background: linear-gradient(131deg, #000 0%, #000 100%);
+  }
+
+  @media (max-width: $breakpoint768) {
+    font-size: 16px;
+    width: 60px;
+  }
+}

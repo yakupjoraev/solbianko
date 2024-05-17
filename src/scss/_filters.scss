@@ -1,0 +1,155 @@
+.filters {
+  display: flex;
+  flex-direction: column;
+  padding: 16px;
+  border: 1px solid var(--text-color);
+
+  // .filters__item
+
+  &__item {
+    padding: 12px 0;
+
+    &:not(:last-child) {
+      border-bottom: 1px solid var(--text-color);
+    }
+
+    &.active {
+      .filters__item-link {
+        font-weight: 500;
+      }
+
+      .filters__item-siblist {
+        display: flex;
+        margin-top: 16px;
+      }
+
+      .filters__item-btn img {
+        transform: rotate(90deg);
+      }
+    }
+  }
+
+  // .filters__item-row
+
+  &__item-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  // .filters__item-link
+
+  &__item-link {
+    display: inline-flex;
+    width: fit-content;
+    padding: 0 12px 0 0;
+    font-family: var(--secondary-font);
+    font-size: 14px;
+    text-transform: uppercase;
+    color: var(--text-color);
+
+    @media (hover:hover) {
+      &:hover {
+        color: var(--orange-color);
+      }
+    }
+  }
+
+  // .filters__item-btn
+
+  &__item-btn {
+    background-color: transparent;
+    border: 0;
+    outline: 0;
+    padding-left: 12px;
+
+    img {
+      transition: 0.2s linear;
+    }
+  }
+
+  // .filters__item-siblist
+
+  &__item-siblist {
+    display: none;
+    flex-direction: column;
+    row-gap: 10px;
+    margin-left: 100px;
+    animation: fade 0.3s linear;
+  }
+}
+
+.sorts {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+
+  // .sorts__item
+
+  &__item {
+    position: relative;
+
+    &.active {
+      .sorts__list {
+        display: flex;
+        margin-top: 16px;
+      }
+
+      .sorts__row-btn img {
+        transform: rotate(90deg);
+      }
+    }
+  }
+
+  // .sorts__row
+
+  &__row {
+    display: inline-flex;
+    width: fit-content;
+    padding: 0 12px 0 0;
+    font-family: var(--secondary-font);
+    font-size: 14px;
+    text-transform: uppercase;
+    color: var(--text-color);
+    cursor: pointer;
+    transition: 0.2s linear;
+
+    @media (hover:hover) {
+      &:hover {
+        color: var(--orange-color);
+      }
+    }
+  }
+
+  // .sorts__row-btn
+
+  &__row-btn {
+    background-color: transparent;
+    border: 0;
+    outline: 0;
+    padding-left: 12px;
+
+    img {
+      transition: 0.2s linear;
+    }
+  }
+
+  // .sorts__list
+
+  &__list {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    display: none;
+    flex-direction: column;
+    animation: fade 0.3s linear;
+    background-color: #fbfbfb;
+    padding: 20px 10px;
+    row-gap: 10px;
+
+    .sorts__row {
+      padding: 0;
+    }
+  }
+}

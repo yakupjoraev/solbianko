@@ -1,0 +1,123 @@
+.products {
+  padding: 60px 0 200px;
+
+
+  @media (max-width: $breakpoint1450) {
+
+    .filters,
+    .sorts {
+      display: none;
+    }
+  }
+
+  @media (max-width: $breakpoint992) {
+    padding: 40px 0 100px;
+  }
+
+  @media (max-width: $breakpoint768) {
+    padding: 20px 0 60px;
+  }
+
+  // .products__inner
+
+  &__inner {}
+
+  // .products__rows
+
+  &__rows {
+    display: flex;
+    flex-direction: column;
+    row-gap: 144px;
+
+
+    @media (max-width: $breakpoint1450) {
+      row-gap: 100px;
+    }
+  }
+
+  // .products__row
+
+  &__row {
+    display: flex;
+    align-items: flex-start;
+    column-gap: 40px;
+
+
+    @media (max-width: $breakpoint1450) {
+      flex-direction: column;
+      row-gap: 36px;
+    }
+
+    @media (max-width: $breakpoint768) {
+      row-gap: 24px;
+    }
+  }
+
+  // .products__head
+
+  &__head {
+    display: flex;
+    flex-direction: column;
+    row-gap: 48px;
+    max-width: 480px;
+    width: 100%;
+
+  }
+
+  // .products__head-title
+
+  &__head-title {
+    font-family: var(--secondary-font);
+    font-weight: 900;
+    font-size: 40px;
+    line-height: 120%;
+    text-transform: uppercase;
+    color: var(--text-color);
+
+    @media (max-width: $breakpoint992) {
+      font-size: 30px;
+    }
+
+    @media (max-width: $breakpoint768) {
+      font-size: 24px;
+    }
+  }
+
+  // .products__items
+
+  &__items {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    column-gap: 80px;
+    row-gap: 80px;
+    max-width: 1100px;
+    margin-left: auto;
+
+
+    @media (max-width: $breakpoint1450) {
+      grid-template-columns: repeat(4, 1fr);
+      max-width: 100%;
+      column-gap: 40px;
+      row-gap: 80px;
+    }
+
+    @media (max-width: $breakpoint992) {
+      grid-template-columns: repeat(3, 1fr);
+    }
+
+    @media (max-width: $breakpoint768) {
+      grid-template-columns: repeat(2, 1fr);
+      column-gap: 20px;
+      row-gap: 40px;
+    }
+
+    .sorts {
+      grid-column: span 3;
+
+    }
+  }
+
+  // .products__item
+
+  &__item {}
+}

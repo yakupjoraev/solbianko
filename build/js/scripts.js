@@ -277,6 +277,49 @@ function productTabs() {
 
 productTabs();
 
+document.addEventListener('DOMContentLoaded', function () {
+  const container = document.querySelector('.filters');
+
+  if (!container) {
+    return null;
+  }
+  // Select all buttons within the filters
+  const buttons = document.querySelectorAll('.filters__item-btn');
+
+  buttons.forEach(button => {
+    button.addEventListener('click', function () {
+      // Remove the 'active' class from all filters__item elements
+      document.querySelectorAll('.filters__item').forEach(item => item.classList.remove('active'));
+
+      // Add the 'active' class to the parent element of the clicked button
+      this.closest('.filters__item').classList.add('active');
+    });
+  });
+});
+
+
+document.addEventListener('DOMContentLoaded', function () {
+  const container = document.querySelector('.sorts');
+
+  if (!container) {
+    return null;
+  }
+
+  // Select all sort buttons
+  const sortButtons = document.querySelectorAll('.sorts__item');
+
+  sortButtons.forEach(button => {
+    button.addEventListener('click', function () {
+      // Remove the 'active' class from all sorts__item elements
+      document.querySelectorAll('.sorts__item').forEach(item => item.classList.remove('active'));
+
+      // Add the 'active' class to the parent element of the clicked button
+      this.closest('.sorts__item').classList.add('active');
+    });
+  });
+});
+
+
 
 // if (window.matchMedia("(min-width: 768px)").matches) {
 //   slider();
