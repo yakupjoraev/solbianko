@@ -54,6 +54,14 @@ body {
   z-index: 10;
 }
 
+.full-section {
+  height: 100vh;
+
+  // @media (max-width: $breakpoint1450) {
+  //   height: 100%;
+  // }
+}
+
 
 // Animations
 // Fade

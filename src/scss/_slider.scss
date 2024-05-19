@@ -1,9 +1,9 @@
 .slider {
-  padding: 200px 0 40px;
+  padding: 180px 0 40px;
   overflow: visible;
 
   @media (max-width: $breakpoint768) {
-    padding: 60px 0 0;
+    padding: 180px 0 40px;
   }
 
   &__container {
@@ -49,6 +49,11 @@
     img {
       width: 150px;
       height: auto;
+
+
+      @media (max-height: 1500px) {
+        width: 120px;
+      }
     }
 
 
@@ -71,6 +76,11 @@
     margin-bottom: 34px;
     text-align: center;
 
+
+    @media (max-height: 1500px) {
+      margin-bottom: 20px;
+    }
+
     @media (max-width: $breakpoint768) {
       row-gap: 16px;
       margin-bottom: 24px;
@@ -90,6 +100,11 @@
     line-height: 120%;
     text-transform: uppercase;
     color: var(--text-color);
+
+
+    @media (max-height: 1500px) {
+      font-size: 40px;
+    }
 
     @media (max-width: $breakpoint992) {
       font-size: 30px;
@@ -113,6 +128,10 @@
     font-weight: 400;
     font-size: 16px;
     color: var(--text-color);
+
+    @media (max-width: $breakpoint992) {
+      max-width: 520px;
+    }
 
     @media (max-width: $breakpoint768) {
       font-size: 12px;
@@ -168,7 +187,7 @@
     justify-content: center;
     align-items: center;
     column-gap: 32px;
-    padding: 64px 20px 20px;
+    padding: 20px 20px 20px;
 
     .swiper-pagination-bullet {
       width: 16px;
@@ -208,7 +227,8 @@
 }
 
 .slider-2 {
-  padding: 120px 0 60px;
+  padding: 60px 0 40px;
+
 
   @media (max-width: $breakpoint992) {
     padding: 80px 0 40px;

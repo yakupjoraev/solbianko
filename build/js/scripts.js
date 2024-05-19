@@ -257,6 +257,76 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
 
+
+document.addEventListener('DOMContentLoaded', () => {
+  const sections = document.querySelectorAll('.full-section');
+  const normalSections = document.querySelectorAll('.normal-section');
+  let currentSectionIndex = 0;
+  let isScrolling = false;
+  let isInFullSectionMode = true;
+
+  function scrollToSection(index) {
+    if (index >= 0 && index < sections.length && !isScrolling) {
+      isScrolling = true;
+      console.log(`Scrolling to section ${index}`);
+      sections[index].scrollIntoView({ behavior: 'smooth' });
+      setTimeout(() => {
+        currentSectionIndex = index;
+        isScrolling = false;
+      }, 1000); // Adjust the timeout to match the scroll duration
+    }
+  }
+
+  function handleScroll(event) {
+    if (!isInFullSectionMode) return; // Skip custom scroll handling if not in full-section mode
+    event.preventDefault(); // Prevent the default scroll behavior
+
+    if (isScrolling) return;
+
+    if (event.deltaY > 0) {
+      // Scrolling down
+      if (currentSectionIndex < sections.length - 1) {
+        scrollToSection(currentSectionIndex + 1);
+      } else {
+        // Exit full-section mode
+        isInFullSectionMode = false;
+        document.body.style.overflowY = 'auto';
+      }
+    } else if (event.deltaY < 0) {
+      // Scrolling up
+      if (currentSectionIndex > 0) {
+        scrollToSection(currentSectionIndex - 1);
+      }
+    }
+  }
+
+  window.addEventListener('wheel', handleScroll, { passive: false });
+
+  // To prevent the default scroll behavior
+  window.addEventListener('keydown', (event) => {
+    if (!isInFullSectionMode) return; // Skip custom scroll handling if not in full-section mode
+    if (event.key === 'ArrowDown') {
+      event.preventDefault();
+      if (currentSectionIndex < sections.length - 1) {
+        scrollToSection(currentSectionIndex + 1);
+      } else {
+        // Exit full-section mode
+        isInFullSectionMode = false;
+        document.body.style.overflowY = 'auto';
+      }
+    } else if (event.key === 'ArrowUp') {
+      event.preventDefault();
+      if (currentSectionIndex > 0) {
+        scrollToSection(currentSectionIndex - 1);
+      }
+    }
+  });
+
+  console.log('Initialization complete');
+});
+
+
+
 if (window.matchMedia("(min-width: 991px)").matches) {
 
 
