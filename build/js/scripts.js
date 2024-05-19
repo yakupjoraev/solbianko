@@ -74,6 +74,32 @@ heroNav();
 
 
 
+document.addEventListener('DOMContentLoaded', function () {
+  const heroFixed = document.querySelector('.hero-fixed');
+  const heroSection = document.querySelector('.hero');
+  const body = document.body;
+
+  // Создаем пустой div для триггера
+  const triggerDiv = document.createElement('div');
+  triggerDiv.classList.add('hero-fixed-trigger');
+  heroFixed.parentNode.insertBefore(triggerDiv, heroFixed.nextSibling);
+
+  function onScroll() {
+    const heroFixedTop = heroFixed.getBoundingClientRect().top;
+    const heroSectionBottom = heroSection.getBoundingClientRect().bottom;
+
+    if (heroFixedTop <= 0 && !body.classList.contains('hero-nav-fixed')) {
+      body.classList.add('hero-nav-fixed');
+    } else if (heroSectionBottom >= window.innerHeight) {
+      body.classList.remove('hero-nav-fixed');
+      if (triggerDiv.parentNode) {
+        triggerDiv.parentNode.removeChild(triggerDiv);
+      }
+    }
+  }
+
+  window.addEventListener('scroll', onScroll);
+});
 
 
 
