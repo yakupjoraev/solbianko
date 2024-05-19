@@ -199,6 +199,7 @@ function slider() {
     },
     pagination: {
       el: '.slider__pagination',
+      clickable: true,
     },
     thumbs: {
       swiper: swiper_text,
