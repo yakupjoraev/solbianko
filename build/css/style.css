@@ -201,6 +201,22 @@ body.locked {
   padding-top: 100px;
 }
 
+.main__body.hero-nav-fixed .header {
+  opacity: 0;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  pointer-events: none;
+}
+
+.main__body.hero-nav-fixed .hero__inner {
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 10;
+}
+
 @-webkit-keyframes fade {
   0% {
     opacity: 0;

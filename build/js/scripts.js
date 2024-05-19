@@ -72,19 +72,11 @@ function heroNav() {
 }
 heroNav();
 
-// Вызываем эту функцию, если нам нужно зафиксировать меню при скролле.
-function fixedNav() {
-  const nav = document.querySelector('nav')
 
-  // тут указываем в пикселях, сколько нужно проскроллить что бы наше меню стало фиксированным
-  const breakpoint = 1
-  if (window.scrollY >= breakpoint) {
-    nav.classList.add('fixed__nav')
-  } else {
-    nav.classList.remove('fixed__nav')
-  }
-}
-window.addEventListener('scroll', fixedNav)
+
+
+
+
 
 
 function productSlider() {
@@ -131,123 +123,65 @@ function productSlider() {
 
 productSlider();
 
-// function slider() {
-//   const container = document.querySelector('.slider__container');
-
-//   if (!container) {
-//     return null
-//   }
-
-//   var swiper = new Swiper(".slider", {
-//     slidesPerView: 1,
-//     centeredSlides: true,
-//     loop: true,
-//     // spaceBetween: 40,
-//     pagination: {
-//       el: ".slider__pagination",
-//       clickable: true,
-//     },
-
-//     breakpoints: {
-//       // when window width is >= 320px
-//       320: {
-//         slidesPerView: 1,
-//         // spaceBetween: 20
-//       },
-//       // when window width is >= 480px
-//       480: {
-//         // spaceBetween: 30
-//       },
-//       // when window width is >= 640px
-//       767: {
-//         slidesPerView: 3,
-//         // spaceBetween: 40
-//       },
-
-//       991: {
-//         slidesPerView: 4,
-//         // spaceBetween: 40
-//       },
-
-//       1200: {
-//         slidesPerView: 5,
-//         // spaceBetween: 40
-//       }
-//     }
-//   });
-// }
-
-// slider();
-
-// function sliderTwo() {
-//   const container = document.querySelector('.slider__container');
-
-//   if (!container) {
-//     return null
-//   }
-
-//   var swiper = new Swiper(".slider-2", {
-//     slidesPerView: 1,
-//     centeredSlides: true,
-//     loop: true,
-//     // spaceBetween: 40,
-//     pagination: {
-//       el: ".slider__pagination",
-//       clickable: true,
-//     },
-//   });
-// }
-
-// sliderTwo();
-
 function slider() {
   const container = document.querySelector('.slider__container');
 
   if (!container) {
-    return null;
+    return null
   }
 
-  const swiper1 = new Swiper(".slider", {
+  const swiper_text = new Swiper(".slider-2", {
+    loop: true,
+    slidesPerView: 1,
+    allowTouchMove: false,
+  })
+  const swiper_main = new Swiper('.slider', {
     slidesPerView: 1,
     centeredSlides: true,
-    // loop: true,
+    loop: true,
+    // spaceBetween: 40,
     pagination: {
       el: ".slider__pagination",
       clickable: true,
     },
+
     breakpoints: {
-      320: { slidesPerView: 1 },
-      767: { slidesPerView: 3 },
-      991: { slidesPerView: 4 },
-      1200: { slidesPerView: 5 },
-    }
-  });
+      // when window width is >= 320px
+      320: {
+        slidesPerView: 1,
+        // spaceBetween: 20
+      },
+      // when window width is >= 480px
+      480: {
+        // spaceBetween: 30
+      },
+      // when window width is >= 640px
+      767: {
+        slidesPerView: 3,
+        // spaceBetween: 40
+      },
 
-  const swiper2 = new Swiper(".slider-2", {
-    slidesPerView: 1,
-    centeredSlides: true,
-    // loop: true,
-    pagination: {
-      el: ".slider__pagination",
-      clickable: true,
+      991: {
+        slidesPerView: 4,
+        // spaceBetween: 40
+      },
+
+      1200: {
+        slidesPerView: 5,
+        // spaceBetween: 40
+      }
     },
-  });
+    pagination: {
+      el: '.slider__pagination',
+    },
+    thumbs: {
+      swiper: swiper_text,
+    },
+  })
 
-  swiper1.on('slideChange', function () {
-    if (swiper2) {
-      swiper2.slideTo(this.activeIndex);
-    }
-  });
-
-  swiper2.on('slideChange', function () {
-    if (swiper1) {
-      swiper1.slideTo(this.activeIndex);
-    }
-  });
 }
 
 slider();
-
 
 
 function productTabs() {
@@ -321,7 +255,10 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
 
-// if (window.matchMedia("(min-width: 768px)").matches) {
-//   slider();
-// }
+
+
+if (window.matchMedia("(min-width: 991px)").matches) {
+
+
+}
 
