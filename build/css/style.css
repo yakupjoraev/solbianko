@@ -473,6 +473,15 @@ body.locked {
   z-index: 10;
 }
 
+.sliders {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
 .slider {
   padding: 180px 0 40px;
   overflow: visible;
