@@ -56,12 +56,17 @@
   // .products__head
 
   &__head {
+    position: sticky;
+    top: 100px;
     display: flex;
     flex-direction: column;
     row-gap: 48px;
     max-width: 480px;
     width: 100%;
 
+    @media (max-width: $breakpoint1450) {
+      position: static;
+    }
   }
 
   // .products__head-title

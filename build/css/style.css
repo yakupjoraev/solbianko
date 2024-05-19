@@ -1587,6 +1587,8 @@ body.locked {
 }
 
 .products__head {
+  position: sticky;
+  top: 100px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -2468,6 +2470,10 @@ body.locked {
         -ms-flex-direction: column;
             flex-direction: column;
     row-gap: 36px;
+  }
+
+  .products__head {
+    position: static;
   }
 
   .products__items {
